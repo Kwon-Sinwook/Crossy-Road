@@ -12,9 +12,6 @@ public class PlayerMove : MonoBehaviour
     private Vector3 right = new Vector3(1, 0, 0);
     private Vector3 left = new Vector3(-1, 0, 0);
 
-    public int count = 0;
-    public int max = 0;
-
     public void OnMove(InputValue input)
     {
         Vector2 dir = input.Get<Vector2>();
@@ -31,12 +28,10 @@ public class PlayerMove : MonoBehaviour
         
         else if (dir == Vector2.up)
         {
-            count++;
             transform.Translate(forward);
         }
         else if(dir == Vector2.down)
         {
-            count--;
             transform.Translate(back);
         }
     }
