@@ -7,23 +7,10 @@ using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
-
-    Rigidbody rb;
-
-    public float moveSpeed;
-    public Vector3 move = Vector3.zero;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //rb.velocity = move;
-    }
-
+    private Vector3 forward = new Vector3(0, 0, 1);
+    private Vector3 back = new Vector3(0, 0, -1);
+    private Vector3 right = new Vector3(1, 0, 0);
+    private Vector3 left = new Vector3(-1, 0, 0);
 
     public void OnMove(InputValue input)
     {
@@ -31,21 +18,21 @@ public class PlayerMove : MonoBehaviour
         
         if (dir == Vector2.right) 
         {
-            transform.Translate(dir);
+            transform.Translate(right);
         }
 
         else if (dir == Vector2.left)
         {
-            transform.Translate(dir);
+            transform.Translate(left);
         }
         
         else if (dir == Vector2.up)
         {
-            transform.Translate(new Vector3(0,0,1));
+            transform.Translate(forward);
         }
         else if(dir == Vector2.down)
         {
-            transform.Translate(new Vector3(0, 0, -1));
+            transform.Translate(back);
         }
     }
 }
