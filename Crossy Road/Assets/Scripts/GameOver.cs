@@ -7,9 +7,9 @@ public class GameOver : MonoBehaviour
 {
     public GameObject EndPanel;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Pumpkin"))
+        if (other.gameObject.CompareTag("Pumpkin") || other.gameObject.CompareTag("Wall"))
         {
             other.gameObject.SetActive(false);
             EndPanel.SetActive(true);
