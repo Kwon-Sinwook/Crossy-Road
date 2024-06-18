@@ -13,7 +13,7 @@ public class Pumpkin : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        moveSpeed = Random.Range(5, 15);
+        moveSpeed = Random.Range(7, 20);
     }
 
     private void Update()
@@ -24,12 +24,7 @@ public class Pumpkin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            this.gameObject.SetActive(false);
-        }
-
-        else if (other.CompareTag("Wall"))
+        if (other.CompareTag("Wall"))
         {
             this.gameObject.SetActive(false);
         }

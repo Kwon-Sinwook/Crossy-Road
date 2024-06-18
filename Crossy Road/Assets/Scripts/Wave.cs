@@ -29,7 +29,7 @@ public class Wave : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time > 1f)
+        if(time > 0.5f)
         {
             SpawnPumpkin();
             time = 0f;
@@ -48,6 +48,4 @@ public class Wave : MonoBehaviour
             pumpkin.SetActive(true);
         }
     }
-
-
 }
